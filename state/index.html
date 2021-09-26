@@ -1,0 +1,27 @@
+<div class="my-div"></div>
+<script>
+  const div = document.querySelector(".my-div");
+  let state = {
+    items: ["item1", "item2", "item3"],
+  };
+
+  const render = () => {
+    const { items } = state;
+    div.innerHTML = `
+      <ul>
+        ${items.map((item) => `<li>${item}</li>`).join("")}
+      </ul>
+      <button class="button"> add </button>
+    `;
+    document.querySelector(".button").addEventListener("click", () => {
+      setState({ items: [...items, `items${items.length + 1}`] });
+    });
+  };
+
+  const setState = (newState) => {
+    state = { ...state, ...newState };
+    render();
+  };
+
+  render();
+</script>

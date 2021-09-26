@@ -5,24 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./index.css" />
   </head>
   <body>
-    <div class="first">
-      <div class="second">
-        <div class="third">third</div>
-        second
-      </div>
-      first
+    <div class="menu">
+      <input class="menu__input" type="text" />
+      <button class="menu__btn menu__btn-add">추가하기</button>
+      <button class="menu__btn menu__btn-delete">삭제하기</button>
+      <button class="menu__btn menu__btn-update">수정하기</button>
     </div>
+    <ul class="list">
+      리스트
+    </ul>
+    <script type="text/javascript" src="./index.js"></script>
   </body>
-  <script>
-    const first = document.querySelector(".first");
-    const second = document.querySelector(".second");
-    const third = document.querySelector(".third");
-    [first, second, third].forEach((div) => {
-      div.addEventListener("click", () => {
-        alert(div.innerHTML);
-      });
-    });
-  </script>
 </html>
