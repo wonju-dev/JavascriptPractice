@@ -1,4 +1,4 @@
-import "./dotenv.js";
+import "dotevn.config.js";
 
 const a = process.env.firstVariable;
 
