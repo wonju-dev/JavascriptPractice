@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // setItem(key, value)
+      localStorage.setItem("name", "wonju");
+      // getItem(key)
+      const name = localStorage.getItem("name");
+      // removeItem(key)
+      //localStorage.removeItem("name");
+
+      // setItem(key, value)
+      sessionStorage.setItem("name", "juWon");
+      // getItem(key);
+      const name2 = sessionStorage.getItem("name");
+      // removeItem(key);
+      //sessionStorage.removeItem("name");
+
+      // expires = UTC string format
+      const cookie = "name=WonWon; expires=" + new Date(2023, 5, 12).toUTCString();
+      console.log(cookie);
+      document.cookie = cookie;
+    </script>
+  </body>
+</html>

@@ -8,3 +8,13 @@ delay(delayMillisecond)
     return delayMillisecond / 1000;
   })
   .then((second) => console.log(`${second}초가 지났습니다`));
+
+
+  /* 
+  1. delay 호출
+  2. promise 반환
+  3. promise 내부에 있는 비동기는 웹 api에게 전달
+  4. 웹 api에서 반환
+  5. 
+  
+  */
