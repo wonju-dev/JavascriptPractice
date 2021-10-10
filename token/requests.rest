@@ -1,0 +1,19 @@
+GET http://localhost:3000/
+###
+GET http://localhost:3000/post
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indvbmp1QG5hdmVyLmNvbSIsInBhc3N3b3JkIjoiaW5pdGlhbExXSjI2MDVfXyIsImlhdCI6MTYzMzg3MjUxNSwiZXhwIjoxNjMzODcyNTMwfQ.5D_CFk5QwD8AP4xFp0f6gmW7LXTd4qP6uNnoCRAW5pE
+###
+POST http://localhost:3000/token HTTP/1.1
+Content-Type: application/json
+
+{
+    "refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Indvbmp1QG5hdmVyLmNvbSIsInBhc3N3b3JkIjoiaW5pdGlhbExXSjI2MDVfXyIsImlhdCI6MTYzMzg3MjUxNX0.l5w-pcgBl58h5SBnlim9BvgAsLa22kpu8G8mAhGb-Dw"
+}
+### 
+POST http://localhost:3000/signIn HTTP/1.1
+content-type: application/json
+
+{
+    "username": "wonju@naver.com",
+    "password": "initialLWJ2605__"
+}
