@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import { ThemeContext } from "./context/theme-context";
+
 import useFetch from "./hooks/useFetch";
 
 import List from "./list.jsx";
@@ -19,10 +21,12 @@ export default function App() {
   };
 
   return (
-    <div className="root">
-      <List loading={loading} todos={todos} />
+    <>
+      <ThemeContext.Provider value={{ color: "white" }}>
+        <List loading={loading} todos={todos} />
+      </ThemeContext.Provider>
       <input onChange={getNewTodo}></input>
       <button onClick={addNewTodo}></button>
-    </div>
+    </>
   );
 }
