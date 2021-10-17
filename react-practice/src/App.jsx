@@ -1,32 +1,19 @@
 import React, { useState } from "react";
 
-import { ThemeContext } from "./context/theme-context";
-
-import useFetch from "./hooks/useFetch";
-
-import List from "./list.jsx";
-
 export default function App() {
-  const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState({});
+  const [state, setState] = useState({ counter: 5, action: undefined });
 
-  const loading = useFetch(todos, setTodos);
-
-  const addNewTodo = () => {
-    setTodos([...todos, newTodo]);
-  };
-
-  const getNewTodo = (event) => {
-    setNewTodo({ title: event.target.value });
+  const decreaseCounter = () => {
+    console.log(state);
+    setState((prev) => {
+      return { counter: prev.counter - 1 };
+    }); // state가 counter : 4, action : undefined가 아닌, 그냥 4로 변함
   };
 
   return (
     <>
-      <ThemeContext.Provider value={{ color: "white" }}>
-        <List loading={loading} todos={todos} />
-      </ThemeContext.Provider>
-      <input onChange={getNewTodo}></input>
-      <button onClick={addNewTodo}></button>
+      <button onClick={decreaseCounter}>decreaseCounter!</button>
+      <div>{state.counter}</div>
     </>
   );
 }
