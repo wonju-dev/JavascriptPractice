@@ -1,12 +1,17 @@
 import React from "react";
 
+import { connect } from "react-redux";
+
 import Li from "./Li";
 
-export default function List({ todoList }) {
-  function handleClick(event) {
-    console.log(event.target);
-  }
-
-  const todos = todoList.map((todo) => <Li ekey={todo.key} value={todo.value} handleClick={handleClick} />);
+function List({ todo }) {
+  const todos = { todo }.todo.map((todoElement) => <Li ekey={todoElement.key} value={todoElement.value} />);
   return <ul>{todos}</ul>;
 }
+
+const mapStateToProps = (state) => {
+  return {
+    todo: state.todo,
+  };
+};
+export default connect(mapStateToProps)(List);

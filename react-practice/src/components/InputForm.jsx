@@ -1,10 +1,22 @@
 import React from "react";
 
-export default function InputForm(props) {
+import { connect } from "react-redux";
+import { updateNewTodo, addNewTodo } from "../store/store";
+
+function InputForm({ updateNewTodo, addNewTodo }) {
   return (
     <>
-      <input ref={props.inputTag} onChange={props.handleNewTodoChange} type="text" placeholder="new Todo is"></input>
-      <button onClick={props.handleSubmitNewTodo}>add!</button>
+      <input onChange={updateNewTodo} placeholder="new Todo is"></input>
+      <button onClick={addNewTodo}>add!</button>
     </>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addNewTodo: () => dispatch(addNewTodo()),
+    updateNewTodo: () => dispatch(updateNewTodo()),
+  };
+};
+
+export default connect(mapDispatchToProps)(InputForm);
