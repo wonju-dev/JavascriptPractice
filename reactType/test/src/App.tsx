@@ -1,11 +1,13 @@
-import React from "react";
+import React, { Suspense } from "react";
 
-import { Header } from "./components/header";
+import { Menu } from "./components/Menu";
+import { Post } from "./components/Post";
 
 export const App: React.FC = () => {
   return (
-    <div>
-      <Header />
-    </div>
+    <Suspense fallback={<div>loading....</div>}>
+      <Menu />
+      <Post />
+    </Suspense>
   );
 };

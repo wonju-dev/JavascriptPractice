@@ -1,0 +1,14 @@
+[
+  {
+    "name": "menu1",
+    "description": "this is menu1's description!"
+  },
+  {
+    "name": "menu2",
+    "description": "this is menu2's description!"
+  },
+  {
+    "name": "menu3",
+    "description": "this is menu3's description!"
+  }
+]
