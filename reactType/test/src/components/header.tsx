@@ -1,13 +1,18 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
+import React, { MouseEvent, ChangeEvent } from "react";
 
-interface props {
-  welcomeMessage: string;
-  username?: string;
-}
+export const Header: React.FC = () => {
+  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+    console.log("clicked!");
+  };
 
-export const Header: React.FC<props> = ({ welcomeMessage }) => {
-  const [myState, setMyState] = useState<string>(welcomeMessage);
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
+    console.log(event.target.value);
+  };
 
-  return <div>{myState}</div>;
+  return (
+    <>
+      <input onChange={handleChange} />
+      <button onClick={handleClick}>click!</button>
+    </>
+  );
 };

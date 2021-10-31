@@ -5,7 +5,7 @@ import { Header } from "./components/header";
 export const App: React.FC = () => {
   return (
     <div>
-      <Header welcomeMessage="hi" />
+      <Header />
     </div>
   );
 };
