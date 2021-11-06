@@ -1,17 +1,5 @@
 {
-  "menu1": [
-    { "name": "menu1-1", "content": "1" },
-    { "name": "menu1-2", "content": "11" },
-    { "name": "menu1-3", "content": "111" }
-  ],
-  "menu2": [
-    { "name": "menu2-1", "content": "2" },
-    { "name": "menu2-2", "content": "22" },
-    { "name": "menu2-3", "content": "222" }
-  ],
-  "menu3": [
-    { "name": "menu3-1", "content": "3" },
-    { "name": "menu3-2", "content": "33" },
-    { "name": "menu3-3", "content": "333" }
-  ]
+  "menu1": ["menu1-1", "menu1-2", "menu1-3", "menu1-4"],
+  "menu2": ["menu2-1", "menu2-2", "menu2-3", "menu2-4"],
+  "menu3": ["menu3-1", "menu3-2", "menu3-3", "menu3-4"]
 }

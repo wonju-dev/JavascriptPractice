@@ -8,7 +8,12 @@ interface menuData {
 export const withMenuList = selector({
   key: "withMenuList",
   get: async (): Promise<Array<menuData>> => {
-    const response = await fetch("menu.json");
+    const response = await fetch("menu.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    });
     const menuList = await response.json();
     return menuList;
   },

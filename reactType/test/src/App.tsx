@@ -7,7 +7,9 @@ export const App: React.FC = () => {
   return (
     <Suspense fallback={<div>loading....</div>}>
       <Menu />
-      <Post />
+      <Suspense fallback={<div>loading....</div>}>
+        <Post />
+      </Suspense>
     </Suspense>
   );
 };

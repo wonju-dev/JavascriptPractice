@@ -1,5 +1,5 @@
 import React, { MouseEvent } from "react";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useRecoilState } from "recoil";
 import { clickedMenuAtom, withMenuList } from "../recoil/header";
 import { withPostList } from "../recoil/post";
 
@@ -9,7 +9,7 @@ interface menuData {
 }
 
 export const Menu: React.FC = () => {
-  const setClickedMenu = useSetRecoilState(clickedMenuAtom);
+  const [ClickedMenu, setClickedMenu] = useRecoilState(clickedMenuAtom);
   const menuList = useRecoilValue(withMenuList);
   const menuElement = menuList.map((menu: menuData, index: number) => <li key={index}>{menu.name}</li>);
 
