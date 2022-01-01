@@ -8,8 +8,8 @@ const redisClient = createClient({
   password: process.env.PASSWORD,
 });
 
-// 1. 전체 팀 포스트잇 불러오기 : []
-// 1. 전체 채팅방 채팅 불러오기 : []
+// 데이터 배열 반환
+// dataId를 입력하면 특정 데아터 객체 반환
 const read = (key, arrayId, dataId = undefined) => {
   return new Promise((resolve, reject) => {
     redisClient.lrange(`${key}-${arrayId}`, 0, -1, (error, array) => {
@@ -23,6 +23,7 @@ const read = (key, arrayId, dataId = undefined) => {
   });
 };
 
+// 특정 배열의 마지막 데이터 반환
 const readLast = (key, arrayId) => {
   return new Promise((resolve, reject) => {
     redisClient.rpop(`${key}-${arrayId}`, (error, data) => {
@@ -36,8 +37,7 @@ const readLast = (key, arrayId) => {
   });
 };
 
-// 2. 포스트잇 생성 : null
-// 2. 채팅 전송 : null
+// 데이터 생성
 const create = (key, arrayId, data) => {
   return new Promise(async (resolve, reject) => {
     await increaseIndex();
@@ -48,6 +48,8 @@ const create = (key, arrayId, data) => {
   });
 };
 
+// ID 반환 함수
+// 데이터 생성시 작동
 const increaseIndex = () => {
   return new Promise((resolve, reject) => {
     redisClient.get("index", (error, index) => {
@@ -63,6 +65,7 @@ const increaseIndex = () => {
 };
 
 // 3. 특정 데이터 이동, 업데이트 : obj
+// newData 객체에 ID가 포함되어야 함
 const update = (key, arrayId, newData) => {
   return new Promise(async (resolve, reject) => {
     const dataArray = await read(key, arrayId);

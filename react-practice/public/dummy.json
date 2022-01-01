@@ -1,1 +1,6 @@
-[{ "title": "원주" }, { "title": "재욱" }, { "title": "원주" }, { "title": "원주" }, { "title": "원주" }, { "title": "원주" }, { "title": "원주" }, { "title": "원주" }, { "title": "원주" }]
+{
+  "menu1": ["M1A1"],
+  "menu2": ["M2A1", "M2A2"],
+  "menu3": ["M3A1", "M3A2", "M3A3"],
+  "menu4": ["M4A1", "M4A2", "M4A3", "M4A4"]
+}

@@ -1,6 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { ariticleState as ariticleAtom } from "../atoms/article";
 import { clickedMenu as clickedMenuAtom } from "../atoms/menu";
@@ -9,16 +8,6 @@ export default function Article() {
   const [article, setArticle] = useRecoilState(ariticleAtom);
   const [clickedMenu, setClickedMenu] = useRecoilState(clickedMenuAtom);
   const [newArticle, setNewArticle] = useState("");
-  let articleList = getArticle();
-
-  function getArticle() {
-    const ariticleList = article[clickedMenu];
-    if (ariticleList) return ariticleList.map((value, index) => <li key={index}>{value}</li>);
-  }
-
-  useEffect(() => {
-    articleList = getArticle();
-  }, [clickedMenu]);
 
   function handleChange(event) {
     setNewArticle(event.target.value);
@@ -38,10 +27,8 @@ export default function Article() {
   }
 
   return (
-    <>
-      <ul>{articleList}</ul>
+      <ul>{article}</ul>
       <input onChange={handleChange} />
       <button onClick={handleClick}>add new Article</button>
-    </>
   );
 }

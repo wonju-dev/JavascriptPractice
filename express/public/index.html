@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <button class="button">click</button>
+    <div class="div"></div>
+  </body>
+
+  <script>
+    const button = document.querySelector(".button");
+    const div = document.querySelector(".div");
+    button.addEventListener("click", async () => {
+      try {
+        const response = await fetch("http://localhost:3000");
+        console.log(response);
+        if (response.ok) {
+          console.log(response.status);
+        }
+        div.innerHTML = response;
+      } catch (err) {
+        console.log("error is ", err);
+      }
+    });
+  </script>
+</html>

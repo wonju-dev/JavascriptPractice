@@ -11,7 +11,6 @@ export default function App() {
 
   return (
     <>
-      <p> number of menu is {menu.length}</p>
       <Menu />
       <Article />
     </>
